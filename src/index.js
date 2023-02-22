@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './resources/reportWebVitals';
 
 
 import {
@@ -9,10 +9,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Root from "../src/Components/Routes/root";
-import ErrorPage from "./Components/Error/NotFound/ErrorPage";
-import Home from "./Components/Home/Home";
-import Contact from "./Components/Contact/Contact";
+import Root from "./main/Routes/root";
+import ErrorPage from "./modules/Error/NotFound/ErrorPage";
+import Home from "./modules/Home/Home";
+import Contact from "./modules/Contact/Contact";
+import Products from "./modules/Products/Products";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "home",
+        element: <Home />,
+      },
+      {
+        path: "products",
+        element: <Products/>,
       },
       {
         path: "contact",

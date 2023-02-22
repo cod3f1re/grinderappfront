@@ -1,14 +1,18 @@
-import './Menu.scss';
+
 import React from 'react';
-import {Outlet, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import './Menu.scss';
+
+function holds(){
+    console.log("click");
+}
 
 export class MenuApp extends React.Component {
     render() {
         return (
-
             <nav className="navbar container">
-                <a href="#" className="brand">Brand</a>
-                <div className="burger" id="burger">
+                 <Link className="brand" to={`home`}>Nike</Link>
+                <div className="burger" id="burger" onClick={holds}>
                     <span className="burger-line"></span>
                     <span className="burger-line"></span>
                     <span className="burger-line"></span>
@@ -16,13 +20,17 @@ export class MenuApp extends React.Component {
                 <div className="menu" id="menu">
                     <ul className="menu-inner">
                         <li className="menu-item">
-                            <Link className="menu-link" to={`/`}>Home</Link>
+                            <Link className="menu-link" to={`home`}>Inicio</Link>
                         </li>
                         <li className="menu-item">
-                            <Link className="menu-link" to={`contact`}>Your Name</Link>
+                            <Link className="menu-link" to={`products`}>Productos</Link>
                         </li>
-                        <li className="menu-item"><a href="#" className="menu-link">Pricing</a></li>
-                        <li className="menu-item"><a href="#" className="menu-link">Support</a></li>
+                        <li className="menu-item">
+                            <Link className="menu-link" to={`contact`}>Contacto</Link>
+                        </li>
+                        <li className="menu-item">
+                            <a href="#" className="menu-link">Support</a>
+                        </li>
                     </ul>
                 </div>
                 <button className="switch" id="switch">

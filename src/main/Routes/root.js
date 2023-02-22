@@ -1,18 +1,16 @@
 import {Outlet} from "react-router-dom";
-import '../Menu/listen'
-import {MenuApp} from "../Menu/Menu";
+import {MenuApp} from "../../modules/Menu/Menu";
+import './root.scss'
 
 export default function Root() {
     return (
         <>
-            <div id="sidebar">
+            <div id="menu">
                 <MenuApp/>
             </div>
 
             <main className="main">
-                <div id="detail">
-                    <Outlet/>
-                </div>
+                <Outlet/>
             </main>
         </>
 
