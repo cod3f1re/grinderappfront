@@ -1,80 +1,35 @@
 import './Menu.scss';
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    BrowserRouter,
-    Link
-} from "react-router-dom";
 
-
-import Home from '../Home/Home'
-
-class Submenu extends React.Component {
+export class MenuApp extends React.Component {
     render() {
         return (
-            <div>
 
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                    </Routes>
-                </BrowserRouter>
+            <nav className="navbar container">
+              <a href="#" className="brand">Brand</a>
+              <div className="burger" id="burger">
+                  <span className="burger-line"></span>
+                  <span className="burger-line"></span>
+                  <span className="burger-line"></span>
+              </div>
+              <div className="menu" id="menu">
+                  <ul className="menu-inner">
+                      <li className="menu-item">
+                          <a href='/' className="menu-link">Home</a>
+                      </li>
+                      <li className="menu-item">
+                          <a href="contact" className="menu-link">Feature</a>
+                      </li>
+                      <li className="menu-item"><a href="#" className="menu-link">Pricing</a></li>
+                      <li className="menu-item"><a href="#" className="menu-link">Support</a></li>
+                  </ul>
+              </div>
+              <button className="switch" id="switch">
+                  <i className="switch-light bx bx-sun"></i>
+                  <i className="switch-dark bx bx-moon"></i>
+              </button>
+          </nav>
 
-                    <ul className="nav__submenu">
-                        <li className="nav__submenu-item ">
-                            <a href="home">Our Team</a>
-                        </li>
-                        <li className="nav__submenu-item ">
-                            <a>Our Team</a>
-                        </li>
-                        <li className="nav__submenu-item ">
-                            <a>Our Portfolio</a>
-                        </li>
-                    </ul>
-            </div>
-        )
-    }
-}
-
-class MenuApp extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showAboutMenu: false
-        };
-    }
-
-    handleHover = (event) => {
-        this.setState({showAboutMenu: true});
-    };
-
-    handleLeave = (event) => {
-        this.setState({showAboutMenu: false});
-    };
-
-    render() {
-        return (
-            <nav className="nav">
-                <ul className="nav__menu">
-                    <li className="nav__menu-item">
-                        <a>Home</a>
-                    </li>
-                    <li className="nav__menu-item" onMouseLeave={this.handleLeave}>
-                        <a onMouseEnter={this.handleHover}>
-                            About
-                        </a>
-                        <div className="submenu-container">
-                            {this.state.showAboutMenu && <Submenu/>}
-                        </div>
-                    </li>
-
-                    <li className="nav__menu-item">
-                        <a>Contact</a>
-                    </li>
-                </ul>
-            </nav>
         )
     }
 }

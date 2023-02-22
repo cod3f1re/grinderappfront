@@ -1,11 +1,22 @@
 import React from "react";
 
-class Home extends React.Component {
-    render() {
-        return (
-            <h1>Hola, soy el home</h1>
-        );
-    }
+export default function Home() {
+  return (
+            <section className="section banner banner-section">
+                <div className="container banner-column">
+                    <img className="banner-image" src="https://i.ibb.co/sVqYmS2/Illustration.png" alt="Illustration"/>
+                        <div className="banner-inner">
+                            <h1 className="heading-xl">All Your Files in One Secure Location.</h1>
+                            <p className="paragraph">
+                                We stores all your most important files in one secure location.
+                                Access them whenever needed, share and collaborate with
+                                your connections.
+                            </p>
+                            <button className="btn btn-darken btn-inline">
+                                Get Started<i className="bx bx-right-arrow-alt"></i>
+                            </button>
+                        </div>
+                </div>
+            </section>
+  );
 }
-
-export default Home
