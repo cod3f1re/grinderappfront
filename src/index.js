@@ -2,14 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './Components/App/App';
-import MenuApp from './Components/Menu/Menu';
 import reportWebVitals from './reportWebVitals';
+
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import "./index.css";
+import Root from "../src/Components/Routes/root";
+import ErrorPage from "../src/Components/Routes/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+]);
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <MenuApp />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
