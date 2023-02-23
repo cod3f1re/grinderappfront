@@ -18,38 +18,8 @@ import Grid from '@mui/material/Grid'; // Grid version 1
 import Paper from '@mui/material/Paper';
 
 
-interface ExpandMoreProps extends IconButtonProps {
-    expand: boolean;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-    const {expand, ...other} = props;
-    return <IconButton {...other} />;
-})(({theme, expand}) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));
-
-
-const Item = styled(Paper)(({theme}) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 
 export default function CardExpandable() {
-
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-
     return (
         <div style={{padding: '20px'}} >
             <Grid container rowSpacing={1} columnSpacing={{xs: 1, sm: 2, md: 3}}>
@@ -162,112 +132,6 @@ export default function CardExpandable() {
                         </Card>
 
                     </Item>
-                </Grid>
-                <Grid xs={3}>
-                    <Item>
-
-                        <Card sx={{maxWidth: 345}}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
-                                        R
-                                    </Avatar>
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon/>
-                                    </IconButton>
-                                }
-                                title="Shrimp and Chorizo Paella"
-                                subheader="September 14, 2016"
-                            />
-                            <CardMedia
-                                component="img"
-                                height="194"
-                                image="https://doto.vtexassets.com/arquivos/ids/204985/pc-gamer-grizzly-24-kit-gamer-5600g-1tb-dotomexico-vista-frontal-2.jpg?v=637897224870370000"
-                                alt="Paella dish"
-                            />
-                            <CardContent>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon/>
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon/>
-                                </IconButton>
-                                <ExpandMore
-                                    expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon/>
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                        This impressive paella is a perfect party dish and a fun meal to cook
-                                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                                        if you like.
-                                    </Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card>
-                    </Item>
-                </Grid>
-                <Grid xs={3}>
-                    <Item>
-                        <Card sx={{maxWidth: 345}}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
-                                        R
-                                    </Avatar>
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon/>
-                                    </IconButton>
-                                }
-                                title="Shrimp and Chorizo Paella"
-                                subheader="September 14, 2016"
-                            />
-                            <CardMedia
-                                component="img"
-                                height="194"
-                                image="https://doto.vtexassets.com/arquivos/ids/204985/pc-gamer-grizzly-24-kit-gamer-5600g-1tb-dotomexico-vista-frontal-2.jpg?v=637897224870370000"
-                                alt="Paella dish"
-                            />
-                            <CardContent>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon/>
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon/>
-                                </IconButton>
-                                <ExpandMore
-                                    expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon/>
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                        This impressive paella is a perfect party dish and a fun meal to cook
-                                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                                        if you like.
-                                    </Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card></Item>
                 </Grid>
             </Grid>
 
