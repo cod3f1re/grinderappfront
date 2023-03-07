@@ -14,6 +14,7 @@ import ErrorPage from "./modules/Error/NotFound/ErrorPage";
 import Home from "./modules/Home/Home";
 import Contact from "./modules/Contact/Contact";
 import Products from "./modules/Products/Products";
+import Login from "./modules/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ]
   },

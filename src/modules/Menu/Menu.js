@@ -1,9 +1,8 @@
-
 import React from 'react';
 import {Link} from "react-router-dom";
 import './Menu.scss';
 
-function holds(){
+function holds() {
     console.log("click");
 }
 
@@ -11,7 +10,7 @@ export class MenuApp extends React.Component {
     render() {
         return (
             <nav className="navbar container">
-                 <Link className="brand" to={`home`}>Nike</Link>
+                <Link className="brand" to={`home`}>Nike</Link>
                 <div className="burger" id="burger" onClick={holds}>
                     <span className="burger-line"></span>
                     <span className="burger-line"></span>
@@ -29,7 +28,7 @@ export class MenuApp extends React.Component {
                             <Link className="menu-link" to={`contact`}>Contacto</Link>
                         </li>
                         <li className="menu-item">
-                            <a href="#" className="menu-link">Support</a>
+                            <Link className="menu-link" to={`login`}>Login</Link>
                         </li>
                     </ul>
                 </div>

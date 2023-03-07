@@ -15,7 +15,6 @@ export default function Products() {
     async function fetchUser() {
         try {
             const user = await getRequest('https://jsonplaceholder.typicode.com/users');
-            console.log(user.data)
             setPost(user?.data);
         } catch (error) {
             //Log errors
